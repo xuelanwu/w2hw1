@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>发现广州</title>
+    <meta name="tittle" content="发现广州" />
+    <meta name="description" content="广州吃喝玩乐免费资讯" />
+    <meta name="keyword" content="广州,广州景点,广州美食,广州文化,广州玩乐" />
+    <meta name="author" content="Xuelan" />
+    <meta property="og:image" content="./timg.png" />
+    <link rel="icon" href="./timg.png" />
+    <link rel="stylesheet" href="hw1.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo-container">
+        <img src="./timg.png" alt="广州地图" />
+      </div>
+      <div class="links-container">
+        <ul>
+          <li>
+            <a href="#">景点</a>
+          </li>
+          <li>
+            <a href="#">美食</a>
+          </li>
+          <li>
+            <a href="#">文化</a>
+          </li>
+          <li>
+            <a href="#">玩乐</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <h1>发现广州</h1>
+
+    <div class="column-facts">
+      <h2>在广州不能错过：</h2>
+      <ul>
+        <li><p>西关的青石砖街道</p></li>
+        <li><p>东山的婀娜红楼</p></li>
+        <li><p>黄埔古港的古朴村落</p></li>
+        <li><p>长堤大马路的珠江夜景</p></li>
+      </ul>
+      <button type="button">
+        了解更多
+      </button>
+    </div>
+
+    <table>
+      <h3>
+        GUANGZHOU, THE QUICK FACTS
+      </h3>
+      <tr>
+        <th>面积</th>
+        <th>人口</th>
+      </tr>
+      <tr>
+        <td>7434.4平方千米</td>
+        <td>1490.44万（2018）</td>
+      </tr>
+      <tr>
+        <th>地貌</th>
+        <th>气候条件</th>
+      </tr>
+      <tr>
+        <td>丘陵地带</td>
+        <td>亚热带季风气候</td>
+      </tr>
+      <tr>
+        <th>方言</th>
+        <th>市花</th>
+      </tr>
+      <tr>
+        <td>粤语</td>
+        <td>木棉花</td>
+      </tr>
+    </table>
+
+    <div class="box">
+      <div class="content">
+        <div class="content-container">
+          <img src="./nature.jpg" alt="南岭风光" />
+          <p class="sum">左手五岭逶迤，右手波涛汹涌，岭南自是别有一番风味</p>
+        </div>
+        <div class="content-container">
+          <img src="./food.jpeg" alt="烧腊" />
+          <p class="sum">
+            除了各色点心，广州还有一盅靓汤、一碗糖水、一份烧腊……
+          </p>
+        </div>
+        <div class="content-container">
+          <img src="./opera.jpeg" alt="同乐酒家" />
+          <p class="sum">
+            同乐酒家是广州仅存的一家粤剧茶楼，粤剧文化恐怕会逐渐消失
+          </p>
+        </div>
+        <div class="content-container">
+          <img src="./fishing.jpeg" alt="渔民新村" />
+          <p class="sum">早上体验渔民新村的淳朴，晚上感受珠江新城的繁华</p>
+        </div>
+        <div class="content-container">
+          <img src="./fish.jpeg" alt="桑基鱼塘" />
+          <p class="sum">桑基鱼塘是珠三角地区农业智慧的体现</p>
+        </div>
+        <div class="content-container">
+          <img src="./trafic.jpeg" alt="广州大桥" />
+          <p class="sum">下班高峰时段的广州大桥</p>
+        </div>
+        <div class="content-container">
+          <img src="./river.jpeg" alt="珠江" />
+          <p class="sum">蜿蜒的珠江贯穿整个广州</p>
+        </div>
+        <div class="content-container">
+          <img src="./temple.jpeg" alt="光孝寺" />
+          <p class="sum">光孝寺，最初为末代南越王的住宅</p>
+        </div>
+        <div class="content-container">
+          <img src="./IFC.jpeg" alt="IFC" />
+          <p class="sum">天河区国际金融中心</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-container">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/_3iz1LGdCCI"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <footer>
+      <h4>订阅我们，发现更多广州的美好吧</h4>
+
+      <form>
+        <label>姓名：</label>
+        <input placeholder="例：陈小明" type="text" />
+        <label>电子邮箱：</label>
+        <input placeholder="例：123abc@email.com" type="email" />
+        <label>电话：</label>
+        <input placeholder="例：12345678" type="tel" />
+        <label>确定订阅邮件：</label>
+        <input readonly value="是" type="text" />
+        <button type="button" onclick="alert('谢谢订阅！')">
+          提交
+        </button>
+      </form>
+
+      <p id="demo"></p>
+      <button onclick="getLocation()">点击显示您的地理位置</button>
+      <script>
+        var x = document.getElementById("demo");
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else {
+            x.innerHTML = "此浏览器不支持获取地理位置";
+          }
+        }
+        function showPosition(position) {
+          x.innerHTML =
+            "Latitude: " +
+            position.coords.latitude +
+            "<br>Longitude: " +
+            position.coords.longitude;
+        }
+      </script>
+    </footer>
+  </body>
+</html>
